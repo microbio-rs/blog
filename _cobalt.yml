@@ -14,4 +14,4 @@ pages:
 posts:
   rss: rss.xml
   default:
-    permalink: /{{year}}/{{month}}/{{day}}/{{slug}}
+    permalink: /{{year}}/{{month}}/{{day}}/{{slug}}/index.html
