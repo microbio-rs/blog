@@ -10,6 +10,8 @@ ignore:
   - blog_arch.py
   - LICENSE
   - TODO
+  - benchmark.yml
+  - Makefile
 pages:
 posts:
   rss: rss.xml

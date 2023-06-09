@@ -1,0 +1,11 @@
+---
+
+concurrency: 1
+base: 'https://blog.microbio.rs'
+iterations: 5
+rampup: 2
+
+plan:
+  - name: Fetch index
+    request:
+      url: /index.html
