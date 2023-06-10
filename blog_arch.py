@@ -30,13 +30,17 @@ def create_diagram():
     with Diagram("blog architecture - microbio.rs", show=False, filename=filename):
         user = User("User")
         with Cluster("AWS Cloud"):
-            cf = CF("CloudFront")
-            acm = ACM("Cert *.microbio.rs")
-            lambda_edge = CloudFrontEdgeLocation("Security response\nheaders")
+            # lambda_edge = CloudFrontEdgeLocation("Security response\nheaders")
             route = Route53("DNS microbio.rs")
             s3 = S3("blog.microbio.rs")
-            user >> route >> acm >> cf >> s3
-            cf << lambda_edge
+            with Cluster("Front") as front:
+                cf = CF("CloudFront")
+                acm = ACM("Cert *.microbio.rs")
+                cf - acm 
+            user >> route >> Edge(label="cached?") >> cf
+            cf >> Edge(label="obtem arquivo") >> s3
+            user << route << cf
+            # cf << lambda_edge
 
 
 if __name__ == "__main__":

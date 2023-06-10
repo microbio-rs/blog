@@ -1,0 +1,17 @@
+site:
+  title: microbio.rs
+  description: Blog microbio.rs
+  base_url: https://blog.microbio.rs
+syntax_highlight:
+  theme: base16-ocean.light
+  enabled: true
+ignore:
+  - README.md
+  - blog_arch.py
+  - LICENSE
+  - TODO
+pages:
+posts:
+  rss: rss.xml
+  default:
+    permalink: /{{year}}/{{month}}/{{day}}/{{slug}}

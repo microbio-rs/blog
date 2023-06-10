@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ page.title }}</title>
+        <meta name="description" content="{{ page.description }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="canonical" href="{{ site.base_url }}/{{ page.permalink }}">
+        <link rel="stylesheet" href="{{ site.base_url }}/static/css/styles.css" />
+        {%- comment -%} <link rel="apple-touch-icon" sizes="180x180" href="{{ site.base_url}}"> {% endcomment %}
+        {%- comment -%} <link rel="icon" type="image/png" sizes="32x32" href=""> {% endcomment %}
+        {%- comment -%} <link rel="icon" type="image/png" sizes="16x16" href=""> {% endcomment %}
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ site.base_url }}/{{ page.permalink }}">
+        <meta property="og:title" content="{{ page.title }}">
+        <meta property="og:description" content="{{ page.description }}">
+        {%- if page.image -%}
+        {% comment %} <meta property="og:image" content="https://justine.lol/mmap/llama.png"> {% endcomment %}
+        {% else %}
+        {% comment %} <meta property="og:image" content="https://justine.lol/mmap/llama.png"> {% endcomment %}
+        {%- endif -%}
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="{{ site.base_url }}/{{ page.permalink }}">
+        <meta property="twitter:title" content="{{ page.title }}">
+        <meta property="twitter:description" content="{{ page.description }}">
+        {%- if page.image -%}
+        {% comment %} <meta property="twitter:image" content="https://justine.lol/mmap/llama.png"> {% endcomment %}
+        {% else %}
+        {% comment %} <meta property="twitter:image" content="https://justine.lol/mmap/llama.png"> {% endcomment %}
+        {%- endif -%}
+    </head>
+    <body>
+      {{ page.content }}
+    </body>
+</html>
+
