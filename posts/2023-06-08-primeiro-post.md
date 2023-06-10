@@ -23,7 +23,7 @@ A decisão do [terragrunt][2] foi mais pensando nos seguintes fatores:
 ```
 .
 ├── terraform
-│   ├── modules
+│   ├── modules               <-- módulos utilizados pelo terragrunt
 │   │   ├── github-repo
 │   │   ├── network
 │   │   │   ├── dns
@@ -34,7 +34,7 @@ A decisão do [terragrunt][2] foi mais pensando nos seguintes fatores:
     ├── applications
     │   └── prod
     │       └── blog
-    └── shared
+    └── shared                <-- compartilhados com as aplicações
         └── prod
             └── network
                 └── dns
@@ -75,7 +75,8 @@ Além dos padrões para repositório acima foi criado um módulo para [site
 estático][4] o qual cria a arquitetura da imagem acima, ainda faltam alguns
 pontos de segurança que ficará como *ToDo* para o próximo post.
 
-- [ ] Log do cloudwatch (iremos centralizar isso em um bucket de logs)
+- [x] Dnssec
+- [x] Log do cloudfront (iremos centralizar isso em um bucket de logs)
 - [ ] WAF (Algumas acl básicas)
 - [ ] Shield 
 - [ ] Cabeçalhos de segurança na resposta do cloudfront
